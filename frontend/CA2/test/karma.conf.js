@@ -22,7 +22,7 @@ module.exports = function(config) {
     // list of files / patterns to load in the browser
     files: [
       // bower:js
-      'bower_components/jquery/dist/jquery.js',
+      'bower_components/jquery/jquery.js',
       'bower_components/es5-shim/es5-shim.js',
       'bower_components/respond/dest/respond.src.js',
       'bower_components/angular/angular.js',
@@ -34,7 +34,6 @@ module.exports = function(config) {
       'bower_components/lightgallery/dist/js/lightgallery.min.js',
       'bower_components/leaflet/dist/leaflet-src.js',
       'bower_components/mapbox.js/mapbox.js',
-      'bower_components/angular-ui-tree/dist/angular-ui-tree.js',
       'bower_components/jquery-gotop/src/jquery.gotop.js',
       'bower_components/alertify-js/build/alertify.min.js',
       'bower_components/angular-mocks/angular-mocks.js',

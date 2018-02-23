@@ -14,9 +14,9 @@
     "hover": "Hover#~2.0.2",
     "leaflet": "~0.7.7",
     "mapbox.js": "~2.2.3",
-    "angular-ui-tree": "~2.11.0",
     "jquery-gotop": "*",
-    "alertify-js": "^1.11.0"
+    "alertify-js": "^1.11.0",
+    "jquery": "1.9.1"
   },
   "devDependencies": {
     "angular-mocks": "1.2.29"
@@ -47,6 +47,7 @@
     }
   },
   "resolutions": {
-    "angular": "1.2.29"
+    "angular": "1.2.29",
+    "jquery": "1.9.1"
   }
 }
