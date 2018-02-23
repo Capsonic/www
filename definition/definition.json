@@ -10,7 +10,14 @@
   "documents": [
     {
       "name": "Email",
-      "fields": {},
+      "fields": {
+        "Destinataries": "textarea",
+        "Cc": "textarea",
+        "Bcc": "textarea",
+        "Subject": "string",
+        "Body": "textarea",
+        "Additional Note": "textarea"
+      },
       "relationships": {
         "oneToParent": [],
         "oneToMany": [],
