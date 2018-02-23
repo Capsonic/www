@@ -29,6 +29,13 @@
         "dist/css/bootstrap.css",
         "dist/js/bootstrap.js"
       ]
+    },
+    "owl.carousel": {
+      "main": [
+        "dist/assets/owl.carousel.css",
+        "dist/assets/owl.theme.default.css",
+        "dist/owl.carousel.js"
+      ]
     }
   },
   "resolutions": {
