@@ -116,4 +116,48 @@ angular.module('ca2App').service('utilsService', function($filter) {
     };
 
     return crudInstance;
+}).service('EmailService', function(crudFactory) {
+
+    var crudInstance = new crudFactory({
+
+        entityName: 'Email',
+
+        catalogs: [],
+
+        adapter: function(theEntity) {
+
+            theEntity.SelectedToRecipients = [];
+            if (theEntity.Destinataries) {
+                theEntity.SelectedToRecipients = JSON.parse(theEntity.Destinataries);
+            }
+
+            theEntity.SelectedCcRecipients = [];
+            if (theEntity.Cc) {
+                theEntity.SelectedCcRecipients = JSON.parse(theEntity.Cc);
+            }
+
+            theEntity.SelectedBccRecipients = [];
+            if (theEntity.Bcc) {
+                theEntity.SelectedBccRecipients = JSON.parse(theEntity.Bcc);
+            }
+
+            return theEntity;
+        },
+
+        adapterIn: function(theEntity) {
+
+        },
+
+        adapterOut: function(theEntity, self) {
+            theEntity.Destinataries = JSON.stringify(theEntity.SelectedToRecipients);
+            theEntity.Cc = JSON.stringify(theEntity.SelectedCcRecipients);
+            theEntity.Bcc = JSON.stringify(theEntity.SelectedBccRecipients);
+        },
+
+        dependencies: [
+
+        ]
+    });
+
+    return crudInstance;
 });

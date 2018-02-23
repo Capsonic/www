@@ -36,6 +36,7 @@ module.exports = function(config) {
       'bower_components/mapbox.js/mapbox.js',
       'bower_components/angular-ui-tree/dist/angular-ui-tree.js',
       'bower_components/jquery-gotop/src/jquery.gotop.js',
+      'bower_components/alertify-js/build/alertify.min.js',
       'bower_components/angular-mocks/angular-mocks.js',
       // endbower
       "app/scripts/**/*.js",

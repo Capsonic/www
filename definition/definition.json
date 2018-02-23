@@ -16,7 +16,9 @@
         "Bcc": "textarea",
         "Subject": "string",
         "Body": "textarea",
-        "Additional Note": "textarea"
+        "Additional Note": "textarea",
+        "From Email": "string",
+        "From Name": "string"
       },
       "relationships": {
         "oneToParent": [],

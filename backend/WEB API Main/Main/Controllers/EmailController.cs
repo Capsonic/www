@@ -4,6 +4,7 @@ using BusinessSpecificLogic.Logic;
 
 namespace ReusableWebAPI.Controllers
 {
+    [AllowAnonymous]
     [RoutePrefix("api/Email")]
     public class EmailController : DocumentController<Email>
     {

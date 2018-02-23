@@ -33,6 +33,8 @@ namespace BusinessSpecificLogic.EF
         public string Subject { get; set; }
         public string Body { get; set; }
         public string AdditionalNote { get; set; }
+        public string FromEmail { get; set; }
+        public string FromName { get; set; }
         ///End:Generated:Properties<<<
 
         public string AttachmentsFolder { get; set; }

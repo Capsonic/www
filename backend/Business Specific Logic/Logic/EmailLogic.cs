@@ -38,10 +38,10 @@ namespace BusinessSpecificLogic.Logic
 
                 entity.CreatedAt = DateTimeOffset.Now;
 
-                if (entity.to.Count == 0 && entity.cc.Count == 0 && entity.bcc.Count == 0)
-                {
-                    throw new KnownError("Cannot send email without Recipients.");
-                }
+                //if (entity.to?.Count == 0 && entity.cc?.Count == 0 && entity.bcc?.Count == 0)
+                //{
+                //    throw new KnownError("Cannot send email without Recipients.");
+                //}
 
                 #endregion
 
@@ -89,18 +89,28 @@ namespace BusinessSpecificLogic.Logic
                     AttachmentsFolder = entity.AttachmentsFolder
                 };
 
-                foreach (var item in entity.to)
+                if (entity.to != null)
                 {
-                    emailService.To.Add(item.Email);
+                    foreach (var item in entity.to)
+                    {
+                        emailService.To.Add(item.Email);
+                    }
                 }
 
-                foreach (var item in entity.cc)
+                if (entity.cc != null)
                 {
-                    emailService.Cc.Add(item.Email);
+                    foreach (var item in entity.cc)
+                    {
+                        emailService.Cc.Add(item.Email);
+                    }
                 }
-                foreach (var item in entity.bcc)
+
+                if (entity.bcc != null)
                 {
-                    emailService.Bcc.Add(item.Email);
+                    foreach (var item in entity.bcc)
+                    {
+                        emailService.Bcc.Add(item.Email);
+                    }
                 }
 
                 emailService.Bcc.Add(senderEmailAddress); //Add sender as recipient as well.

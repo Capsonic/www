@@ -13,7 +13,10 @@ angular.module('ca2App', [
     'ngSanitize',
     'ngTouch',
     'ui.tree'
-]).config(function($routeProvider) {
+], function($httpProvider) {
+    $httpProvider.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded;charset=utf-8';
+    $httpProvider.defaults.headers.put['Content-Type'] = 'application/x-www-form-urlencoded;charset=utf-8';
+}).config(function($routeProvider) {
     $routeProvider
         .when('/', {
             templateUrl: 'views/main.html',

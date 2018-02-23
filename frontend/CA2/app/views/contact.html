@@ -7,38 +7,38 @@
         <div class="row">
             <div class="col-sm-6">
                 <p>Use this form to send us a message:</p>
-                <form class="form-horizontal">
+                <form class="form-horizontal" novalidate ng-submit="sendMessage(message);">
                     <div class="form-group">
                         <label style="text-align:right;" class="col-sm-2">Name</label>
                         <div class="col-sm-7">
-                            <input type="text" placeholder="Name" class="form-control" title="Name">
+                            <input type="text" placeholder="Name" class="form-control" title="Name" ng-model="message.FromName">
                         </div>
                     </div>
                     <!-- end control group -->
                     <div class="form-group">
                         <label style="text-align:right;" class="col-sm-2">Email</label>
                         <div class="col-sm-7">
-                            <input type="text" placeholder="Email" class="form-control" title="Email">
+                            <input type="text" placeholder="Email" class="form-control" title="Email" ng-model="message.FromEmail">
                         </div>
                     </div>
                     <!-- end control group -->
                     <div class="form-group">
                         <label style="text-align:right;" class="col-sm-2">Subject</label>
                         <div class="col-sm-7">
-                            <input type="text" placeholder="Subject" class="form-control" title="Subject">
+                            <input type="text" placeholder="Subject" class="form-control" title="Subject" ng-model="message.Subject">
                         </div>
                     </div>
                     <!-- end control group -->
                     <div class="form-group">
                         <label style="text-align:right;" class="col-sm-2">Message</label>
                         <div class="col-sm-10">
-                            <textarea placeholder="Message" class="form-control" rows="5" title="Message"></textarea>
+                            <textarea placeholder="Message" class="form-control" rows="5" title="Message" ng-model="message.Body"></textarea>
                         </div>
                     </div>
                     <!-- end control group -->
                     <div class="form-group">
                         <div class="col-sm-10 col-sm-offset-2">
-                            <input class="btn" type="submit" value="Send Message" ng-click="sendMessage();">
+                            <input class="btn" type="submit" value="Send Message">
                         </div>
                     </div>
                     <!-- end control group -->
