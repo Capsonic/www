@@ -1,0 +1,23 @@
+{
+  "projectName": "Www",
+  "description": "",
+  "backend": {
+    "appName": "Www",
+    "dbName": ""
+  },
+  "frontends": [],
+  "roles": [],
+  "documents": [
+    {
+      "name": "Email",
+      "fields": {},
+      "relationships": {
+        "oneToParent": [],
+        "oneToMany": [],
+        "manyToMany": [],
+        "manyToOne": []
+      }
+    }
+  ],
+  "entities": []
+}
