@@ -1,0 +1,37 @@
+{
+  "name": "ca2",
+  "version": "0.0.0",
+  "dependencies": {
+    "es5-shim": "~4.3.1",
+    "respond": "Respond#~1.4.2",
+    "angular": "1.2.29",
+    "bootstrap": "^3.2.0",
+    "angular-route": "1.2.29",
+    "angular-sanitize": "1.2.29",
+    "angular-touch": "1.2.29",
+    "owl.carousel": "OwlCarousel2#~2.0.0-beta.3",
+    "lightgallery": "~1.2.7",
+    "hover": "Hover#~2.0.2",
+    "leaflet": "~0.7.7",
+    "mapbox.js": "~2.2.3",
+    "angular-ui-tree": "~2.11.0",
+    "jquery-gotop": "*"
+  },
+  "devDependencies": {
+    "angular-mocks": "1.2.29"
+  },
+  "appPath": "app",
+  "moduleName": "ca2App",
+  "overrides": {
+    "bootstrap": {
+      "main": [
+        "less/bootstrap.less",
+        "dist/css/bootstrap.css",
+        "dist/js/bootstrap.js"
+      ]
+    }
+  },
+  "resolutions": {
+    "angular": "1.2.29"
+  }
+}

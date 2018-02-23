@@ -1,0 +1,203 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <!-- build:css(.) styles/vendor.css -->
+    <!-- bower:css -->
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="bower_components/owl.carousel/dist/assets/owl.carousel.css" />
+    <link rel="stylesheet" href="bower_components/owl.carousel/dist/assets/owl.theme.default.css" />
+    <link rel="stylesheet" href="bower_components/lightgallery/dist/css/lightgallery.css" />
+    <link rel="stylesheet" href="bower_components/hover/css/hover.css" />
+    <link rel="stylesheet" href="bower_components/leaflet/dist/leaflet.css" />
+    <link rel="stylesheet" href="bower_components/mapbox.js/mapbox.css" />
+    <link rel="stylesheet" href="bower_components/angular-ui-tree/dist/angular-ui-tree.min.css" />
+    <!-- endbower -->
+    <!-- endbuild -->
+    <!-- build:css(.tmp) styles/main.css -->
+    <link rel="stylesheet" href="scripts/js/jquery-ui.min.css">
+    <!-- <link rel="stylesheet" href="scripts/js/jquery-ui.theme.min.css"> -->
+    <link rel="stylesheet" href="styles/main.css">
+    <!-- endbuild -->
+</head>
+
+<body ng-app="ca2App">
+    <!--[if lte IE 8]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+    <img id="mainLogo" class="col-xs-7 col-sm-3" ng-src="images/CA2-Logo-White-Beveled-1-17-14 (Mobile).png" style="position:absolute;z-index: 200;top: 5px;left: 12px;max-width:340px;">
+    <div class="header">
+        <div class="navbar navbar-default" role="navigation"  style="z-index:100;">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#js-navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#/"></a>
+                </div>
+                <div class="collapse navbar-collapse" id="js-navbar-collapse" style="overflow: hidden;">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="" ng-class="{ active:(activePath == '/') }"><a href="" ng-click="go('/')">Home</a></li>
+                        <li class="" ng-class="{ active:(activePath=='/automotive' || activePath=='/aerospace')}" class="dropdown">
+                            <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Markets <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a ng-click="go('/automotive')" href="">Automotive</a></li>
+                                <li><a ng-click="go('/aerospace')" href="">Aerospace & Military</a></li>
+                            </ul>
+                        </li>
+                        <li class="" ng-class="{ active:(activePath=='/products' || activePath=='/products_wire' || activePath=='/products_actuator' || activePath=='/products_switches' || activePath=='/products_motors' || activePath=='/products_lighting' || activePath=='/products_solenoids' || activePath=='/products_sensors') }"><a href="" ng-click="go('/products')">Products</a></li>
+                        <li class="" ng-class="{ active:(activePath=='/capabilities_engineering' || activePath=='/capabilities_manufacturing' || activePath=='/capabilities_quality' || activePath=='/capabilities_resource')}" class="dropdown">
+                            <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Capabilities <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a ng-click="go('/capabilities_engineering')" href="">Engineering</a></li>
+                                <li><a ng-click="go('/capabilities_manufacturing')" href="">Manufacturing</a></li>
+                                <li><a ng-click="go('/capabilities_quality')" href="">Quality and Delivery</a></li>
+                                <li><a ng-click="go('/capabilities_resource')" href="">Resource and Transfer</a></li>
+                            </ul>
+                        </li>
+                        <li class="" ng-class="{ active:(activePath=='/locations') }"><a ng-click="go('/locations')">Locations</a></li>
+                        <li class="" ng-class="{ active:(activePath=='/valueStream' || activePath=='/valueStream_supplier'|| activePath=='/valueStream_alliances') }" class="dropdown">
+                            <a ng-click="go('/valueStream')" href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Value Stream <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a ng-click="go('/valueStream_supplier')" href="">Supplier Development</a></li>
+                                <li><a ng-click="go('/valueStream_alliances')" href="">Capsonic Alliances</a></li>
+                            </ul>
+                        </li>
+                        <li class="" ng-class="{ active:(activePath=='/contact') }"><a ng-click="go('/contact')">Contact Us</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid" style="padding:0;">
+        <div ng-view=""></div>
+    </div>
+    <div class="footer">
+        <div class="container-fluid">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-3">
+                        <div class="step arrowRed" style="background-color:rgb(205, 33, 34);">
+                            <a ng-href="#/products">
+                                <div class="icon hvr-buzz"><img ng-src="images/footer/Fusion-Symbol-Transparent-scaled1.png" height="70" width="69"></div>
+                                <div style="min-height: 80px;">
+                                    <p>Demonstrated through Capsonic Custom or Build to Print Products</p>
+                                </div>
+                                <h3>Capsonic Products</h3>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="step arrowGray" style="background-color:#4a4a4a;">
+                            <a ng-href="#/capabilities_quality">
+                                <div class="icon hvr-bob"><img ng-src="images/footer/ico-plan.png" height="49" width="39"></div>
+                                <div style="min-height: 80px;">
+                                    <p>Precisely Focused through Capsonic Quality Controls</p>
+                                </div>
+                                <h3>Quality</h3>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="step arrowDarkGray" style="background-color:#3e3e3e;">
+                            <a ng-href="#/capabilities_manufacturing">
+                                <div class="icon hvr-skew"><img ng-src="images/footer/ico-designdev.png" height="41" width="66"></div>
+                                <div style="min-height: 80px;">
+                                    <p>Generated through Capsonic Engineering, Manufacturing and Process Capabilities</p>
+                                </div>
+                                <h3>Capabilities</h3>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="step" style="background-color:#4a4a4a;">
+                            <a ng-href="#/valueStream">
+                                <div class="icon hvr-hang"><img ng-src="images/footer/ico-launch.png" height="42" width="44"></div>
+                                <div style="min-height: 80px;">
+                                    <p>Streamlined through Capsonic’s Value Stream</p>
+                                </div>
+                                <h3>Value Stream</h3>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid poweredBy">
+            <div class="container">© 2013 Copyright by ZnThemes. All rights reserved.</div>
+        </div>
+    </div>
+    <div id='goTop'></div>
+    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
+    <script>
+    ! function(A, n, g, u, l, a, r) {
+        A.GoogleAnalyticsObject = l, A[l] = A[l] || function() {
+                (A[l].q = A[l].q || []).push(arguments)
+            }, A[l].l = +new Date, a = n.createElement(g),
+            r = n.getElementsByTagName(g)[0], a.src = u, r.parentNode.insertBefore(a, r)
+    }(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+    ga('create', 'UA-XXXXX-X');
+    ga('send', 'pageview');
+    </script>
+    <!-- build:js(.) scripts/vendor.js -->
+    <!-- bower:js -->
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/es5-shim/es5-shim.js"></script>
+    <script src="bower_components/respond/dest/respond.src.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+    <script src="bower_components/angular-touch/angular-touch.js"></script>
+    <script src="bower_components/owl.carousel/dist/owl.carousel.js"></script>
+    <script src="bower_components/lightgallery/dist/js/lightgallery.min.js"></script>
+    <script src="bower_components/leaflet/dist/leaflet-src.js"></script>
+    <script src="bower_components/mapbox.js/mapbox.js"></script>
+    <script src="bower_components/angular-ui-tree/dist/angular-ui-tree.js"></script>
+    <script src="bower_components/jquery-gotop/src/jquery.gotop.js"></script>
+    <!-- endbower -->
+    <!-- endbuild -->
+    <!-- build:js({.tmp,app}) scripts/scripts.js -->
+    <script src="scripts/app.js"></script>
+    <script src="scripts/controllers/main.js"></script>
+    <script src="scripts/controllers/about.js"></script>
+    <script src="scripts/controllers/automotive.js"></script>
+    <script src="scripts/controllers/aerospace.js"></script>
+    <script src="scripts/controllers/products.js"></script>
+    <script src="scripts/controllers/products_wire.js"></script>
+    <script src="scripts/controllers/products_actuator.js"></script>
+    <script src="scripts/controllers/products_switches.js"></script>
+    <script src="scripts/controllers/products_motors.js"></script>
+    <script src="scripts/controllers/products_lighting.js"></script>
+    <script src="scripts/controllers/products_solenoids.js"></script>
+    <script src="scripts/controllers/products_sensors.js"></script>
+    <script src="scripts/controllers/capabilities_engineering.js"></script>
+    <script src="scripts/controllers/capabilities_manufacturing.js"></script>
+    <script src="scripts/controllers/capabilities_quality.js"></script>
+    <script src="scripts/controllers/capabilities_resource.js"></script>
+    <script src="scripts/controllers/locations.js"></script>
+    <script src="scripts/controllers/valuestream.js"></script>
+    <script src="scripts/controllers/valuestream_supplier.js"></script>
+    <script src="scripts/controllers/valuestream_alliances.js"></script>
+    <script src="scripts/controllers/contact.js"></script>
+    <script src="scripts/controllers/terms_conditions.js"></script>
+    <script src="scripts/directives/lightgallery.js"></script>
+    <script src="scripts/controllers/nuevapagina.js"></script>
+    <!-- endbuild -->
+    <script src="scripts/js/jquery-ui.min.js"></script>
+    <!--<script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/TweenMax.min.js"></script>-->
+    <script src="scripts/js/TweenMax.min.js"></script>
+    <script src="scripts/js/fluxslider/flux.min.js"></script>
+    <script src="scripts/js/fluxslider/flux.jquery.min.js"></script>
+</body>
+
+</html>
